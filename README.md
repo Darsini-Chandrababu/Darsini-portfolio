@@ -82,8 +82,8 @@ src/
 - Location information
 
 ### Skills
-- SEO & SEM (92%)
 - Content Writing (95%)
+- SEO (92%)
 - Digital Marketing (90%)
 - UI/UX Design (85%)
 - HTML & CSS (80%)

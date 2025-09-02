@@ -73,8 +73,8 @@ function App() {
   };
 
   const skills = [
-    { name: 'SEO & SEM', icon: Search, level: 92, color: 'from-green-400 to-emerald-500' },
     { name: 'Content Writing', icon: PenTool, level: 95, color: 'from-pink-400 to-rose-500' },
+    { name: 'SEO', icon: Search, level: 92, color: 'from-green-400 to-emerald-500' },
     { name: 'Digital Marketing', icon: BarChart3, level: 90, color: 'from-blue-400 to-cyan-500' },
     { name: 'UI/UX Design', icon: Palette, level: 85, color: 'from-purple-400 to-indigo-500' },
     { name: 'HTML & CSS', icon: Code, level: 80, color: 'from-orange-400 to-yellow-500' },
@@ -159,6 +159,14 @@ function App() {
   ];
 
   const experiences = [
+    {
+      role: 'Digital Marketing Intern',
+      company: 'VCodez, Chennai',
+      period: 'July 2025 - Present',
+      description: 'Currently working on digital marketing strategies and content creation',
+      icon: Target,
+      gradient: 'from-emerald-500 to-teal-600'
+    },
     {
       role: 'Digital Marketing Intern',
       company: 'AIC Raise, Coimbatore',
