@@ -118,3 +118,34 @@ body {
     background-position: 200% center;
   }
 }
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  .bg-gradient-to-r {
+    background: white !important;
+  }
+  
+  .text-white {
+    color: black !important;
+  }
+  
+  .border {
+    border-color: #ccc !important;
+  }
+}

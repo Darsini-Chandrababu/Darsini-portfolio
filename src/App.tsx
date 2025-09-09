@@ -32,14 +32,17 @@ import {
   Edit3,
   FileText,
   BookOpen,
-  Rss
+  Rss,
+  Download
 } from 'lucide-react';
 import darsiniPhoto from './darsini.jpg';
+import Resume from './Resume';
 
 function App() {
   const [activeSection, setActiveSection] = useState('hero');
   const [isLoaded, setIsLoaded] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [showResume, setShowResume] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -70,6 +73,13 @@ function App() {
     e.preventDefault();
     console.log('Form submitted:', formData);
     setFormData({ name: '', email: '', message: '' });
+  };
+
+  const printResume = () => {
+    setShowResume(true);
+    setTimeout(() => {
+      window.print();
+    }, 100);
   };
 
   const skills = [
@@ -207,6 +217,22 @@ function App() {
     { name: 'Conversational Data Analytics', company: 'LatentView Analytics', icon: MessageCircle }
   ];
 
+  if (showResume) {
+    return (
+      <div className="print:block">
+        <div className="no-print fixed top-4 right-4 z-50">
+          <button
+            onClick={() => setShowResume(false)}
+            className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-colors duration-300"
+          >
+            Back to Portfolio
+          </button>
+        </div>
+        <Resume />
+      </div>
+    );
+  }
+
   return (
     <div className={`min-h-screen transition-all duration-500 overflow-x-hidden ${
       isDarkMode 
@@ -260,6 +286,17 @@ function App() {
                   </button>
                 ))}
               </div>
+              <button
+                onClick={printResume}
+                className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 hover:scale-105 ${
+                  isDarkMode 
+                    ? 'bg-purple-600/20 hover:bg-purple-600/30 text-purple-300' 
+                    : 'bg-purple-600/10 hover:bg-purple-600/20 text-purple-700'
+                }`}
+              >
+                <Download size={16} />
+                <span className="hidden sm:inline">Resume</span>
+              </button>
               <button
                 onClick={toggleTheme}
                 className={`p-2 rounded-full transition-all duration-300 hover:scale-110 ${
